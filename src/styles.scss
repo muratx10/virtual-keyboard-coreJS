@@ -1,0 +1,202 @@
+@import 'variables';
+
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+.root {
+  display: grid;
+  grid: 1fr / 1fr;
+  grid-row-gap: 20px;
+}
+
+#textInput {
+  width: 90%;
+  max-width: 500px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  margin: 0 auto;
+  padding: 15px;
+  resize: none;
+  color: $textColor;
+  border: 1px solid $mainColor;
+  border-radius: 10px;
+  outline: none;
+  background: lighten($mainColor, 30%);
+}
+
+.keyboardContainer {
+  display: grid;
+  width: 95%;
+  min-width: 320px;
+  max-width: 980px;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+  user-select: none;
+  border-radius: 10px;
+  background: $mainColor;
+
+  .keyboardContainer__keys {
+    transform: translateX(20px);
+  }
+}
+
+.keyboardContainer__key {
+  display: inline-flex;
+  flex-grow: 3;
+  justify-content: center;
+  @include gradientBg(#0E0E0E, #404040);
+  align-items: center;
+  width: 6.4%;
+  height: 45px;
+  font-size: 18px;
+  line-height: 20px;
+  position: relative;
+  margin: 4px 2px;
+  padding: 0;
+  @include shadow;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.1s;
+  text-align: center;
+  vertical-align: top;
+  color: #FFFFFF;
+  border: 1px solid black;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.keyboardContainer__key:hover {
+  @include gradientBg(lighten(#0E0E0E, 10%), lighten(#404040, 10%));
+}
+
+.keyboardContainer__key:focus {
+  outline: none;
+}
+
+.keyboardContainer__key:active {
+  @include gradientBg(lighten(#0E0E0E, 40%), lighten(#404040, 40%));
+  transition: 100ms;
+  border: 1px solid #FFFFFF;
+  transform: scale(0.9);
+  z-index: 99;
+}
+
+.keyboardContainer__key-wide {
+  width: 10%;
+}
+
+.keyboardContainer__key-semiWide {
+  width: 8%;
+}
+
+.active {
+  @include gradientBg(lighten(#0E0E0E, 40%), lighten(#404040, 40%));
+  transition: 100ms;
+  border: 1px solid #FFFFFF;
+  transform: scale(0.9);
+  z-index: 99;
+}
+
+:root .keyboardContainer__key-cmd {
+  width: 7%;
+}
+
+#capsLock {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    background: $mainColor;
+  }
+}
+
+.keyboardContainer__shiftKey {
+  width: 13.4%;
+}
+
+.keyboardContainer__key-extraWide {
+  width: 35%;
+}
+
+[data-btn-type="arrow"] {
+  height: calc(42px / 2);
+  vertical-align: bottom;
+}
+
+.label {
+  display: block;
+  width: 50px;
+  height: 50px;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  line-height: 50px;
+  position: absolute;
+  top: -145px;
+  right: 13px;
+  text-align: center;
+  color: $textColor;
+  border: 1px $textColor solid;
+  border-radius: 5px;
+}
+
+.tip {
+  display: block;
+  width: 250px;
+  height: 19px;
+  font-family: Arial, sans-serif;
+  line-height: 19px;
+  position: absolute;
+  top: -31px;
+  right: 0;
+  transform: translateX(-154%);
+  text-align: center;
+  color: #FFFFFF;
+  border: 1px $textColor solid;
+  border-radius: 5px;
+  background: $mainColor;
+}
+
+#upArr {
+  vertical-align: top;
+}
+
+#downArr {
+  position: absolute;
+  right: 107px;
+  bottom: 0;
+}
+
+.functional {
+  font-size: 13px;
+}
+
+.capsLock-active:after {
+  background: lighten(green, 30%) !important;
+  -moz-box-shadow: 0px 0px 20px 0px rgba(26, 255, 26, 1);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(26, 255, 26, 1);
+  box-shadow: 0px 0px 20px 0px rgba(26, 255, 26, 1);
+}
+
+.features {
+  position: absolute;
+  width: 800px;
+  font-family: Arial, sans-serif;
+  color: $textColor;
+  line-height: 30px;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+

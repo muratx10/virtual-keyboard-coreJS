@@ -1,0 +1,13 @@
+@mixin shadow {
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+	-webkit-user-select: none;
+}
+
+@mixin gradientBg($color1, $color2) {
+    background: linear-gradient(0deg, $color1 0%, $color2 100%);
+}
+
+$mainColor: lighten(#000000, 60%);
+$textColor: #272821;
